@@ -1,83 +1,43 @@
-const WebSocket = require('ws');
+var url = "ws://4.178.168.216:62231"
+var port = 3389
+var id = "name"
+
+const socketio = require('socket.io-client')
 const net = require('net');
+const io = socketio(url,{auth:{id:id}});
+var connections = []
 
-const port = process.argv[2]|| 80;
+io.on('connect', () => {
+console.log("connectted")
+io.on("newclient",function(msg){
+  if(msg.to == id){
+  const server = net.createConnection(port)
+  connections.push({
+    id:msg.id,
+    to:msg.socket,
+    server:server
+  })
+  server.on('data', function(data){
+   io.emit("message", {data:data,id:msg.id,to:msg.socket})
+  });
 
-const wss = new WebSocket.Server({ 
-    port: process.argv[3] || 8080,
-    perMessageDeflate: false
-});
-console.log('🔥 WebSocket sunucusu başlatıldı!',process.argv[3] || 8080);
+}})
+io.on("catch",function(data){
+  if(data.id ==id)
+  io.emit("startit",{socket:data.socket,data:connections.length})
 
-const CONNECTION_TIMEOUT = 30000;
+})
+io.on("message",function(msg) {
+  var a = connections.find((x)=>x.id==msg.id)
+  if(a) a.server.write(msg.data)
+})
+io.on("logout",function(msg) {
+  var aacs= connections.find((x)=>x.to==msg.socket)
+  if(!aacs) return;
+  
+  aacs.server.end();
+  connections.splice(connections.indexOf(aacs),1) 
+})
 
-wss.on('connection', (ws) => {
-    let wsReady = false;
-    let tcpConnected = false;
-    let pendingData = [];
-    
-    const tcpClient = new net.Socket();
-    
-    tcpClient.setTimeout(CONNECTION_TIMEOUT);
-    
-    tcpClient.connect(port, 'localhost', () => {
-        tcpConnected = true;
-        wsReady = true;
-        
-        if (pendingData.length > 0) {
-            pendingData.forEach(data => tcpClient.write(data));
-            pendingData = [];
-        }
-    });
-    
-    tcpClient.on('data', (data) => {
-        try {
-            if (ws.readyState === WebSocket.OPEN) {
-                ws.send(data, { binary: true });
-            }
-        } catch (err) {
-            console.error(`❌ Veri gönderme hatası: ${err.message}`);
-        }
-    });
-    
-    tcpClient.on('timeout', () => {
-        tcpClient.end();
-    });
-    
-    tcpClient.on('error', (err) => {
-        if (err.code !== 'ECONNRESET' && ws.readyState === WebSocket.OPEN) {
-            ws.close();
-        }
-    });
-    
-    tcpClient.on('close', () => {
-        tcpConnected = false;
-        setTimeout(() => {
-            if (ws.readyState === WebSocket.OPEN) {
-                ws.close();
-            }
-        }, 1000);
-    });
-    
-    ws.on('message', (message) => {
-        if (tcpConnected) {
-            tcpClient.write(message);
-        } else {
-            pendingData.push(message);
-        }
-    });
-    
-    ws.on('close', () => {
-        wsReady = false;
-        if (tcpConnected) {
-            tcpClient.end();
-        }
-    });
-    
-    ws.on('error', (err) => {
-        wsReady = false;
-        if (tcpConnected) {
-            tcpClient.destroy();
-        }
-    });
-});
+
+})
