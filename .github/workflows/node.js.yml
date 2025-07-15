@@ -1,0 +1,62 @@
+name: ChromeBotX11
+
+on:
+  workflow_dispatch:
+
+jobs:
+  x11-mouse-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kurulumlar
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget gnupg2 software-properties-common
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable xvfb xdotool
+
+      - name: Xvfb Başlat
+        run: |
+          Xvfb :99 -screen 0 1280x1024x24 &
+          export DISPLAY=:99
+          sleep 2
+          google-chrome --no-sandbox --disable-gpu --display=:99 https://example.com &
+          sleep 5
+
+      - name: Mouse Clickler + Yazı
+        run: |
+          export DISPLAY=:99
+          xdotool mousemove 700 550 click 1
+          sleep 5
+          xdotool mousemove 735 843 click 1
+          sleep 3
+          xdotool mousemove 650 735 click 1
+          sleep 3
+          xdotool mousemove 760 735 click 1
+          sleep 2
+          xdotool mousemove 450 550 click 1
+          sleep 3
+          xdotool mousemove 650 125 click 1
+          xdotool type "SaveYourTime limit time soon"
+          xdotool key Return
+          sleep 3
+          xdotool mousemove 800 400 click 1
+          sleep 3
+          xdotool mousemove 926 1004 click 1
+          sleep 1
+          xdotool mousemove 830 300 click 1
+          sleep 3
+          xdotool mousemove 650 250 click 1
+
+      - name: Ekran görüntüsü al (debug için)
+        run: |
+          sudo apt-get install -y imagemagick
+          import -display :99 -window root screenshot.png
+
+      - name: Screenshot'ı kaydet
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot
+          path: screenshot.png
