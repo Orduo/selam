@@ -23,31 +23,30 @@ jobs:
           export DISPLAY=:99
           sleep 2
           google-chrome --no-sandbox --disable-gpu --display=:99 &
-          sleep 6
+          sleep 5
 
       - name: Mouse Clickler + Yazı
         run: |
           export DISPLAY=:99
           xdotool mousemove 700 550 click 1
-          sleep 4
+          sleep 3
           xdotool mousemove 740 850 click 1
-          sleep 2
+          sleep 1
           xdotool mousemove 760 735 click 1
           
           sleep 1
           xdotool mousemove 450 550 click 1
-          sleep 2
+          sleep 1
           xdotool mousemove 650 125 click 1
           xdotool type "SaveYourTime limit time soon"
           xdotool key Return
 
-          sleep 2
-          xdotool mousemove 800 400 click 1
-          sleep 2
-          xdotool mousemove 926 1004 click 1
           sleep 1
+          xdotool mousemove 800 400 click 1
+          sleep 1
+          xdotool mousemove 926 1004 click 1
           xdotool mousemove 830 300 click 1
-          sleep 2
+          sleep 1
           xdotool mousemove 650 250 click 1
 
 
