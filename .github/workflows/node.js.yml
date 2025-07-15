@@ -28,6 +28,7 @@ jobs:
       - name: Mouse Clickler + Yazı
         run: |
           export DISPLAY=:99
+          sleep 3
           xdotool mousemove 700 550 click 1
           sleep 5
           xdotool mousemove 735 843 click 1
