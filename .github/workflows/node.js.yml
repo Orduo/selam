@@ -37,18 +37,7 @@ jobs:
           xdotool mousemove 760 735 click 1
           sleep 2
           xdotool mousemove 450 550 click 1
-          sleep 3
-          xdotool mousemove 650 125 click 1
-          xdotool type "SaveYourTime limit time soon"
-          xdotool key Return
-          sleep 3
-          xdotool mousemove 800 400 click 1
-          sleep 3
-          xdotool mousemove 926 1004 click 1
-          sleep 1
-          xdotool mousemove 830 300 click 1
-          sleep 3
-          xdotool mousemove 650 250 click 1
+
 
       - name: Ekran görüntüsü al (debug için)
         run: |
