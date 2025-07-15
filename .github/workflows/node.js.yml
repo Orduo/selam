@@ -22,13 +22,13 @@ jobs:
           export DISPLAY=:99
           sleep 2
           google-chrome --no-sandbox --disable-gpu --display=:99 &
-          sleep 6
+          sleep 7
 
       - name: Mouse Clickler + Yazı
         run: |
           export DISPLAY=:99
           xdotool mousemove 700 550 click 1
-          sleep 3
+          sleep 4
           xdotool mousemove 740 850 click 1
           sleep 1
           xdotool mousemove 760 735 click 1
