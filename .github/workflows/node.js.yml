@@ -31,6 +31,8 @@ jobs:
           xdotool mousemove 700 550 click 1
           sleep 5
           xdotool mousemove 740 850 click 1
+          sleep 3
+          xdotool mousemove 760 735 click 1
 
 
 
