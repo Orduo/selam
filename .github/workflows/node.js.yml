@@ -29,11 +29,11 @@ jobs:
         run: |
           export DISPLAY=:99
           xdotool mousemove 700 550 click 1
-          sleep 5
+          sleep 7
           xdotool mousemove 735 843 click 1
-          sleep 3
+          sleep 4
           xdotool mousemove 650 735 click 1
-          sleep 3
+          sleep 4
           xdotool mousemove 760 735 click 1
           sleep 2
           xdotool mousemove 450 550 click 1
