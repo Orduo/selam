@@ -33,6 +33,13 @@ jobs:
           xdotool mousemove 740 850 click 1
           sleep 3
           xdotool mousemove 760 735 click 1
+          
+          sleep 2
+          xdotool mousemove 450 550 click 1
+          sleep 2
+          xdotool mousemove 650 125 click 1
+          xdotool type "SaveYourTime limit time soon"
+          xdotool key Return
 
 
 
