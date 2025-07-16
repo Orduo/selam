@@ -1,0 +1,23 @@
+name: Screenshot on Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  screenshot:
+    runs-on: windows-latest
+    steps:
+      - name: Screenshot için PowerShell scriptini indir
+        run: |
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/kuba/screenshot-powershell/main/screenshot.ps1" -OutFile "screenshot.ps1"
+
+      - name: Screenshot al
+        run: |
+          mkdir screenshots
+          powershell -ExecutionPolicy Bypass -File screenshot.ps1 -Path "screenshots\screenshot.png"
+
+      - name: Artifact olarak yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot
+          path: screenshots/screenshot.png
