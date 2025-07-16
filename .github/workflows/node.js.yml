@@ -46,6 +46,7 @@ jobs:
           xdotool mousemove 830 300 click 1
           sleep 2
           xdotool mousemove 650 250 click 1
+          sleep 60
 
       - name: Ekran görüntüsü al (debug için)
         run: |
@@ -100,6 +101,7 @@ jobs:
           xdotool mousemove 830 300 click 1
           sleep 2
           xdotool mousemove 650 250 click 1
+          sleep 60
 
       - name: Ekran görüntüsü al (debug için)
         run: |
@@ -154,6 +156,7 @@ jobs:
           xdotool mousemove 830 300 click 1
           sleep 2
           xdotool mousemove 650 250 click 1
+          sleep 60
 
       - name: Ekran görüntüsü al (debug için)
         run: |
