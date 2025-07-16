@@ -4,31 +4,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  take-screenshot:
+  screenshot:
     runs-on: windows-latest
     steps:
-      - name: Screenshot scriptini oluştur
-        run: |
-          @"
-          Add-Type -AssemblyName System.Windows.Forms
-          Add-Type -AssemblyName System.Drawing
-
-          \$screenWidth = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width
-          \$screenHeight = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height
-
-          \$bitmap = New-Object System.Drawing.Bitmap \$screenWidth, \$screenHeight
-          \$graphics = [System.Drawing.Graphics]::FromImage(\$bitmap)
-          \$graphics.CopyFromScreen(0, 0, 0, 0, \$bitmap.Size)
-
-          \$filename = "screenshot.png"
-          \$bitmap.Save(\$filename, [System.Drawing.Imaging.ImageFormat]::Png)
-
-          \$graphics.Dispose()
-          \$bitmap.Dispose()
-          "@ > screenshot.ps1
+      - name: PowerShell screenshot scriptini indir
+        run: Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Orduo/selam/main/ss.ps1" -OutFile "ss.ps1"
 
       - name: Screenshot al
-        run: powershell -ExecutionPolicy Bypass -File screenshot.ps1
+        run: powershell -ExecutionPolicy Bypass -File ss.ps1
 
       - name: Artifact olarak yükle
         uses: actions/upload-artifact@v4
