@@ -48,13 +48,12 @@ function Take-Screenshot {
 Move-Click 541 742
 
 Move-Click 443 748
-Start-Sleep -Seconds 6
+Start-Sleep -Seconds 5
 
 #tarayıcılar açıldı edge butona bastı
 Start-Sleep -Seconds 1
-Move-Click 235 619
-Start-Sleep -Seconds 2
-
+Move-Click 235 615
+Start-Sleep -Seconds 1
 
 Move-Click 541 747
 Start-Sleep -Seconds 3    
