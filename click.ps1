@@ -209,7 +209,7 @@ Move-Click 543 209
 Start-Sleep -Seconds 1
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 
-Start-Sleep -Seconds 10
+Start-Sleep -Seconds 20
 Move-Click 400 15
 Move-Click 400 15
 Take-Screenshot -filename "screenshot1.png"
