@@ -35,6 +35,7 @@ function Take-Screenshot {
     )
     $screenWidth = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width
     $screenHeight = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height
+
     $bitmap = New-Object System.Drawing.Bitmap $screenWidth, $screenHeight
     $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
     $graphics.CopyFromScreen(0, 0, 0, 0, $bitmap.Size)
@@ -46,12 +47,16 @@ function Take-Screenshot {
 # === Mouse hareketleri + click ===
 Move-Click 541 742
 Start-Sleep -Seconds 2
+
 Move-Click 443 748
 Start-Sleep -Seconds 5
+
 #tarayıcılar açıldı edge butona bastı
 Move-Click 235 615
+
 Move-Click 541 747
 Start-Sleep -Seconds 4
+
 Move-Click 887 661
 Start-Sleep -Seconds 1    
 Move-Click 504 677
@@ -61,6 +66,7 @@ Start-Sleep -Seconds 1
 ## açıldı
 Move-Click 450 471
 Start-Sleep -Seconds 1
+
 #edge g
 Move-Click 444 744
 Start-Sleep -Seconds 1
@@ -69,11 +75,13 @@ Start-Sleep -Seconds 1
 Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
+
 Move-Click 608 128
 Start-Sleep -Seconds 1
 Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 Start-Sleep -Seconds 1
+
 #edge g
 Move-Click 444 744
 Start-Sleep -Seconds 1
@@ -82,8 +90,10 @@ Start-Sleep -Seconds 1
 Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
+
 Move-Click 439 333
 #chrome sayfasına girdik indirme kaldı
+
 #edge g
 Start-Sleep -Seconds 1
 Move-Click 444 744
@@ -93,36 +103,41 @@ Start-Sleep -Seconds 1
 Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
+
 Move-Click 925 700
 Start-Sleep -Seconds 1
+
 Move-Click 921 264
 Start-Sleep -Seconds 1
 Move-Click 820 252
+
 Start-Sleep -Seconds 3
 Move-Click 578 254
+
 # indirdi diğeri
 Start-Sleep -Seconds 3
 Move-Click 176 29
 Start-Sleep -Seconds 1
-Move-Click 316 131
+Move-Click 608 128
 Start-Sleep -Seconds 1
-Write-Text "QuickPaste Upload files by Paste or Drop – fast and easy."
+
+Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+
 Start-Sleep -Seconds 5
 Take-Screenshot -filename "screenshot1.png"
 # === Başlangıç
 #Write-Text "SaveYourTime limit time soon"
 #[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+
+
+
 Move-Click 444 744
 Start-Sleep -Seconds 1
 Move-Click 100 640
 Start-Sleep -Seconds 1
 Move-Click 100 640
 Start-Sleep -Seconds 1
-#edge açıldı
-Move-Click 257 52
-Start-Sleep -Seconds 1
-Write-Text "https://chromewebstore.google.com/"
-[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
-Start-Sleep -Seconds 3
+
+
 Take-Screenshot -filename "screenshot2.png"
