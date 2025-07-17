@@ -92,15 +92,21 @@ Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
 Move-Click 439 333
-
+#chrome sayfasına girdik indirme kaldı
 #edge g
-Move-Click 444 744
 Start-Sleep -Seconds 1
+Move-Click 444 744
+Start-Sleep -Seconds 2
 Move-Click 100 610
 Start-Sleep -Seconds 1
 Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
+Move-Click 925 700
+Start-Sleep -Seconds 1
+
+Move-Click 921 264
+Start-Sleep -Seconds 1
 
 
 Start-Sleep -Seconds 3
