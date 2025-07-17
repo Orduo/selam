@@ -1,4 +1,4 @@
-Add-Type -AssemblyName System.Windows.Forms
+    Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 function Move-Click {
@@ -57,7 +57,7 @@ Move-Click 235 619
 Start-Sleep -Seconds 2
 
 Move-Click 541 747
-Start-Sleep -Seconds 1
+Start-Sleep -Seconds 2    
 
 Move-Click 887 661
 Start-Sleep -Seconds 1
@@ -72,7 +72,7 @@ Start-Sleep -Seconds 1
 #edge g
 Move-Click 444 744
 Start-Sleep -Seconds 1
-Move-Click 100 590
+Move-Click 100 595
 Start-Sleep -Seconds 1
 Move-Click 541 742
 Start-Sleep -Seconds 1
