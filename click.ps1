@@ -82,8 +82,26 @@ Move-Click 608 128
 Start-Sleep -Seconds 1
 Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
-Start-Sleep -Seconds 2
+
+#edge g
+Move-Click 444 744
+Start-Sleep -Seconds 1
+Move-Click 100 600
+Start-Sleep -Seconds 1
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
 Move-Click 439 333
+
+#edge g
+Move-Click 444 744
+Start-Sleep -Seconds 1
+Move-Click 100 610
+Start-Sleep -Seconds 1
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
+
 
 Start-Sleep -Seconds 3
 Take-Screenshot -filename "screenshot1.png"
@@ -95,10 +113,10 @@ Take-Screenshot -filename "screenshot1.png"
 
 Start-Sleep -Seconds 1
 Move-Click 444 744
-Start-Sleep -Seconds 2
-Move-Click 100 600
-Start-Sleep -Seconds 2
-Move-Click 100 610
+#Start-Sleep -Seconds 2
+#Move-Click 100 600
+#Start-Sleep -Seconds 3
+#Move-Click 100 610
 Start-Sleep -Seconds 2
 
 Take-Screenshot -filename "screenshot2.png"
