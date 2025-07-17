@@ -55,9 +55,8 @@ Start-Sleep -Seconds 5
 Move-Click 235 615
 
 Move-Click 541 747
-Start-Sleep -Seconds 6
+Start-Sleep -Seconds 7
 
-Move-Click 887 661
 Move-Click 887 661
 Start-Sleep -Seconds 1    
 Move-Click 504 677
@@ -170,7 +169,7 @@ Move-Click 578 254
 
 
 Start-Sleep -Seconds 3
-Take-Screenshot -filename "screenshot1.png"
+#resim
 
 
 Move-Click 443 748
@@ -213,6 +212,7 @@ Start-Sleep -Seconds 1
 Start-Sleep -Seconds 10
 Move-Click 400 15
 Move-Click 400 15
+Take-Screenshot -filename "screenshot1.png"
 Start-Sleep -Milliseconds 200
 Move-Click 449 482
 Start-Sleep -Seconds 2
