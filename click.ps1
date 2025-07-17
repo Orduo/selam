@@ -58,16 +58,17 @@ Start-Sleep -Seconds 1
 
 Move-Click 539 750
 Start-Sleep -Seconds 1
-#chrome button bastı
+
 Move-Click 887 661
 Start-Sleep -Seconds 1
 
 Move-Click 504 677
 Start-Sleep -Seconds 1
 Move-Click 675 675
+# google okey
 
 Start-Sleep -Seconds 1
-Move-Click 353 464
+Move-Click 450 471
 
 Take-Screenshot -filename "screenshot1.png"
 # === Başlangıç
@@ -76,7 +77,7 @@ Take-Screenshot -filename "screenshot1.png"
 
 
 Move-Click 444 744
-Start-Sleep -Seconds 1
+Start-Sleep -Seconds 2
 Move-Click 100 600
-
+Start-Sleep -Seconds 2
 Take-Screenshot -filename "screenshot2.png"
