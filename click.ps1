@@ -48,6 +48,12 @@ Start-Sleep -Seconds 2
 Move-Click 443 748
 Start-Sleep -Seconds 1
 
+Move-Click 235 619
+Start-Sleep -Seconds 1
+
+Move-Click 543 746
+Start-Sleep -Seconds 1
+
 Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 Start-Sleep -Seconds 1
