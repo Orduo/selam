@@ -207,8 +207,8 @@ Move-Click 543 209
 Start-Sleep -Seconds 1
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 
-Start-Sleep -Seconds 3
-Move-Click 339 21
+Start-Sleep -Seconds 4
+Move-Click 400 15
 Start-Sleep -Milliseconds 200
 Move-Click 449 482
 Start-Sleep -Seconds 2
