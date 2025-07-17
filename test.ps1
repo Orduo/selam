@@ -1,23 +1,137 @@
-$filePath = "C:\cloudflared.txt"
-$password = "GucluBirSifre123!"
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
 
-$content = Get-Content -Path $filePath -Raw
+function Move-Click {
+    param (
+        [int]$x,
+        [int]$y
+    )
+    [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point($x, $y)
+    Add-Type -TypeDefinition @"
+        using System;
+        using System.Runtime.InteropServices;
+        public class Mouse {
+            [DllImport("user32.dll")]
+            public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
+            public const int MOUSEEVENTF_LEFTDOWN = 0x02;
+            public const int MOUSEEVENTF_LEFTUP = 0x04;
+        }
+"@
+    [Mouse]::mouse_event(0x02, 0, 0, 0, 0)
+    Start-Sleep -Milliseconds 50
+    [Mouse]::mouse_event(0x04, 0, 0, 0, 0)
+}
 
-$keyString = $password.PadRight(32)
-$key = [System.Text.Encoding]::UTF8.GetBytes($keyString)[0..31]
+function Write-Text {
+    param (
+        [string]$text
+    )
+    [System.Windows.Forms.SendKeys]::SendWait($text)
+}
 
-$iv = [byte[]](0..15)
+function Take-Screenshot {
+    param (
+        [string]$filename
+    )
+    $screenWidth = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width
+    $screenHeight = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height
 
-$aes = [System.Security.Cryptography.Aes]::Create()
-$aes.Key = $key
-$aes.IV = $iv
-$aes.Mode = [System.Security.Cryptography.CipherMode]::CBC
-$aes.Padding = [System.Security.Cryptography.PaddingMode]::PKCS7
+    $bitmap = New-Object System.Drawing.Bitmap $screenWidth, $screenHeight
+    $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
+    $graphics.CopyFromScreen(0, 0, 0, 0, $bitmap.Size)
+    $bitmap.Save($filename, [System.Drawing.Imaging.ImageFormat]::Png)
+    $graphics.Dispose()
+    $bitmap.Dispose()
+}
 
-$encryptor = $aes.CreateEncryptor()
-$plainBytes = [System.Text.Encoding]::UTF8.GetBytes($content)
-$encryptedBytes = $encryptor.TransformFinalBlock($plainBytes, 0, $plainBytes.Length)
-$encoded = [Convert]::ToBase64String($encryptedBytes)
+# === Mouse hareketleri + click ===
+Move-Click 541 742
 
-Write-Host "Şifreli Base64 Metin:" 
-Write-Host $encoded
+Move-Click 443 748
+Start-Sleep -Seconds 5
+
+#tarayıcılar açıldı edge butona bastı
+Start-Sleep -Seconds 1
+Move-Click 235 615
+Start-Sleep -Seconds 1
+
+Move-Click 541 747
+Start-Sleep -Seconds 3    
+
+Move-Click 887 661
+Start-Sleep -Seconds 1
+
+Move-Click 504 677
+Start-Sleep -Seconds 1
+Move-Click 675 675
+Start-Sleep -Seconds 1
+# google okey addpn girişi altta
+Move-Click 450 471
+Start-Sleep -Seconds 1
+
+#edge g
+Move-Click 444 744
+Start-Sleep -Seconds 1
+Move-Click 100 595
+Start-Sleep -Seconds 1
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
+
+Move-Click 608 128
+Start-Sleep -Seconds 1
+Write-Text "SaveYourTime limit time soon"
+[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+Start-Sleep -Seconds 1
+
+#edge g
+Move-Click 444 744
+Start-Sleep -Seconds 1
+Move-Click 100 605
+Start-Sleep -Seconds 1
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
+
+Move-Click 439 333
+#chrome sayfasına girdik indirme kaldı
+
+#edge g
+Start-Sleep -Seconds 1
+Move-Click 444 744
+Start-Sleep -Seconds 2
+Move-Click 100 610
+Start-Sleep -Seconds 1
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
+
+Move-Click 925 700
+Start-Sleep -Seconds 1
+
+Move-Click 921 264
+Start-Sleep -Seconds 1
+Move-Click 820 252
+
+Start-Sleep -Seconds 3
+Move-Click 578 254
+
+
+Start-Sleep -Seconds 5
+Take-Screenshot -filename "screenshot1.png"
+# === Başlangıç
+#Write-Text "SaveYourTime limit time soon"
+#[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+
+
+
+Start-Sleep -Seconds 1
+Move-Click 444 744
+#Start-Sleep -Seconds 2
+#Move-Click 100 600
+#Start-Sleep -Seconds 3
+#Move-Click 100 610
+Start-Sleep -Seconds 2
+
+Take-Screenshot -filename "screenshot2.png"
+
