@@ -30,20 +30,23 @@ function Write-Text {
 }
 
 function Take-Screenshot {
+    param (
+        [string]$filename
+    )
     $screenWidth = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width
     $screenHeight = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height
 
     $bitmap = New-Object System.Drawing.Bitmap $screenWidth, $screenHeight
     $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
     $graphics.CopyFromScreen(0, 0, 0, 0, $bitmap.Size)
-    $bitmap.Save("screenshot.png", [System.Drawing.Imaging.ImageFormat]::Png)
+    $bitmap.Save($filename, [System.Drawing.Imaging.ImageFormat]::Png)
     $graphics.Dispose()
     $bitmap.Dispose()
 }
 
 # === Mouse hareketleri + click ===
 Move-Click 541 742
-Start-Sleep -Seconds 2
+Start-Sleep -Seconds 3
 
 Move-Click 443 748
 Start-Sleep -Seconds 3
@@ -51,16 +54,20 @@ Start-Sleep -Seconds 3
 Move-Click 235 619
 Start-Sleep -Seconds 1
 
-Move-Click 543 746
+Move-Click 543 746 # chrome
 Start-Sleep -Seconds 1
 
 Move-Click 887 661
-Start-Sleep -Seconds 3
-# === Başlangıç
-
-Write-Text "SaveYourTime limit time soon"
-[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 Start-Sleep -Seconds 1
 
-# === Screenshot al ===
-Take-Screenshot
+Move-Click 504 677
+Start-Sleep -Seconds 3
+
+Take-Screenshot -filename "screenshot1.png"
+# === Başlangıç
+#Write-Text "SaveYourTime limit time soon"
+#[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+
+
+Move-Click 444 744 #edge
+Take-Screenshot -filename "screenshot2.png"
