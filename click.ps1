@@ -55,8 +55,9 @@ Start-Sleep -Seconds 5
 Move-Click 235 615
 
 Move-Click 541 747
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 6
 
+Move-Click 887 661
 Move-Click 887 661
 Start-Sleep -Seconds 1    
 Move-Click 504 677
@@ -98,6 +99,7 @@ Move-Click 439 333
 Start-Sleep -Milliseconds 200
 Move-Click 444 744
 Start-Sleep -Seconds 2
+Move-Click 100 610
 Move-Click 100 610
 Start-Sleep -Seconds 1
 Move-Click 541 742
