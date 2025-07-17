@@ -54,7 +54,7 @@ Start-Sleep -Seconds 4
 #tarayıcılar açıldı edge butona bastı
 
 Move-Click 235 619
-Start-Sleep -Seconds 2
+Start-Sleep -Seconds 1
 
 Move-Click 541 747
 Start-Sleep -Seconds 1
@@ -65,10 +65,10 @@ Start-Sleep -Seconds 1
 Move-Click 504 677
 Start-Sleep -Seconds 1
 Move-Click 675 675
-# google okey
-
 Start-Sleep -Seconds 1
+# google okey addpn girişi altta
 Move-Click 450 471
+Start-Sleep -Seconds 3
 
 Take-Screenshot -filename "screenshot1.png"
 # === Başlangıç
@@ -80,4 +80,7 @@ Move-Click 444 744
 Start-Sleep -Seconds 2
 Move-Click 100 590
 Start-Sleep -Seconds 2
+Move-Click 100 600
+Start-Sleep -Seconds 2
+
 Take-Screenshot -filename "screenshot2.png"
