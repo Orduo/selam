@@ -46,16 +46,8 @@ jobs:
           xdotool mousemove 830 300 click 1
           sleep 2
           xdotool mousemove 650 250 click 1
-          sleep 60
-
-      - name: Ekran görüntüsü al (debug için)
-        run: |
-          sudo apt-get install -y imagemagick
-          import -display :99 -window root screenshot1.png
-
-      - name: Eklenti iki
-        run: |
-          export DISPLAY=:99
+          sleep 3
+          
           xdotool mousemove 541 29
           sleep 1
           xdotool mousemove 760 735 click 1
@@ -73,8 +65,7 @@ jobs:
           xdotool mousemove 830 300 click 1
           sleep 2
           xdotool mousemove 650 250 click 1
-          sleep 60
-
+          
       - name: Ekran görüntüsü al (debug için)
         run: |
           sudo apt-get install -y imagemagick
@@ -83,11 +74,5 @@ jobs:
       - name: Screenshot'ı kaydet
         uses: actions/upload-artifact@v4
         with:
-          name: screenshot1
-          path: screenshot1.png
-
-      - name: Screenshot'ı kaydet 2
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshot2
-          path: screenshot2.png
+          name: screenshot
+          path: screenshot.png
