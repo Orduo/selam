@@ -203,7 +203,8 @@ Move-Click 950 718
 Start-Sleep -Milliseconds 200
 Move-Click 874 486
 Start-Sleep -Seconds 1
-Move-Click 395 185
+Move-Click 543 209
+
 Start-Sleep -Seconds 3
 Move-Click 339 21
 Start-Sleep -Milliseconds 200
