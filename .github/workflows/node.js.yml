@@ -53,118 +53,41 @@ jobs:
           sudo apt-get install -y imagemagick
           import -display :99 -window root screenshot1.png
 
+      - name: Eklenti iki
+        run: |
+          export DISPLAY=:99
+          xdotool mousemove 541 29
+          sleep 1
+          xdotool mousemove 760 735 click 1
+          sleep 1
+          xdotool mousemove 450 550 click 1
+          sleep 1
+          xdotool mousemove 650 125 click 1
+          xdotool type "QuickPaste Upload files by Paste or Drop fast and easy."
+          xdotool key Return
+          sleep 1
+          xdotool mousemove 800 400 click 1
+          sleep 1
+          xdotool mousemove 926 1004 click 1
+          sleep 1
+          xdotool mousemove 830 300 click 1
+          sleep 2
+          xdotool mousemove 650 250 click 1
+          sleep 60
+
+      - name: Ekran görüntüsü al (debug için)
+        run: |
+          sudo apt-get install -y imagemagick
+          import -display :99 -window root screenshot2.png
+
       - name: Screenshot'ı kaydet
         uses: actions/upload-artifact@v4
         with:
           name: screenshot1
           path: screenshot1.png
 
-  x11-mouse-action-2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Kurulumlar
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget gnupg2 software-properties-common
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable xvfb xdotool
-
-      - name: Xvfb Başlat
-        run: |
-          Xvfb :100 -screen 0 1024x1024x24 &
-          export DISPLAY=:100
-          sleep 2
-          google-chrome --no-sandbox --disable-gpu --display=:100 &
-          sleep 7
-
-      - name: Mouse Clickler + Yazı
-        run: |
-          export DISPLAY=:100
-          xdotool mousemove 700 550 click 1
-          sleep 4
-          xdotool mousemove 740 850 click 1
-          sleep 1
-          xdotool mousemove 760 735 click 1
-          sleep 1
-          xdotool mousemove 450 550 click 1
-          sleep 1
-          xdotool mousemove 650 125 click 1
-          xdotool type "SaveYourTime limit time soon"
-          xdotool key Return
-          sleep 1
-          xdotool mousemove 800 400 click 1
-          sleep 1
-          xdotool mousemove 926 1004 click 1
-          sleep 1
-          xdotool mousemove 830 300 click 1
-          sleep 2
-          xdotool mousemove 650 250 click 1
-          sleep 60
-
-      - name: Ekran görüntüsü al (debug için)
-        run: |
-          sudo apt-get install -y imagemagick
-          import -display :100 -window root screenshot2.png
-
-      - name: Screenshot'ı kaydet
+      - name: Screenshot'ı kaydet 2
         uses: actions/upload-artifact@v4
         with:
           name: screenshot2
           path: screenshot2.png
-
-  x11-mouse-action-3:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Kurulumlar
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget gnupg2 software-properties-common
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable xvfb xdotool
-
-      - name: Xvfb Başlat
-        run: |
-          Xvfb :101 -screen 0 1024x1024x24 &
-          export DISPLAY=:101
-          sleep 2
-          google-chrome --no-sandbox --disable-gpu --display=:101 &
-          sleep 7
-
-      - name: Mouse Clickler + Yazı
-        run: |
-          export DISPLAY=:101
-          xdotool mousemove 700 550 click 1
-          sleep 4
-          xdotool mousemove 740 850 click 1
-          sleep 1
-          xdotool mousemove 760 735 click 1
-          sleep 1
-          xdotool mousemove 450 550 click 1
-          sleep 1
-          xdotool mousemove 650 125 click 1
-          xdotool type "SaveYourTime limit time soon"
-          xdotool key Return
-          sleep 1
-          xdotool mousemove 800 400 click 1
-          sleep 1
-          xdotool mousemove 926 1004 click 1
-          sleep 1
-          xdotool mousemove 830 300 click 1
-          sleep 2
-          xdotool mousemove 650 250 click 1
-          sleep 60
-
-      - name: Ekran görüntüsü al (debug için)
-        run: |
-          sudo apt-get install -y imagemagick
-          import -display :101 -window root screenshot3.png
-
-      - name: Screenshot'ı kaydet
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshot3
-          path: screenshot3.png
