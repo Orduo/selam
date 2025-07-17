@@ -71,7 +71,7 @@ Start-Sleep -Seconds 1
 Move-Click 444 744
 Start-Sleep -Seconds 1
 Move-Click 100 595
-Start-Sleep -Seconds 1
+Start-Sleep -Milliseconds 200
 Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
@@ -80,13 +80,13 @@ Move-Click 608 128
 Start-Sleep -Seconds 1
 Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
-Start-Sleep -Seconds 1
+Start-Sleep -Milliseconds 200
 
 #edge g
 Move-Click 444 744
 Start-Sleep -Seconds 1
 Move-Click 100 605
-Start-Sleep -Seconds 1
+Start-Sleep -Milliseconds 200
 Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
@@ -95,11 +95,11 @@ Move-Click 439 333
 #chrome sayfasına girdik indirme kaldı
 
 #edge g
-Start-Sleep -Seconds 1
+Start-Sleep -Milliseconds 200
 Move-Click 444 744
 Start-Sleep -Seconds 2
 Move-Click 100 610
-Start-Sleep -Seconds 1
+Start-Sleep -Milliseconds 200
 Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
@@ -127,6 +127,45 @@ Start-Sleep -Milliseconds 200
 Write-Text "QuickPaste Upload files by Paste or Drop fast and easy."
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 
+#edge g
+Start-Sleep -Milliseconds 200
+Move-Click 444 744
+Start-Sleep -Seconds 1
+Move-Click 100 640
+Start-Sleep -Seconds 1
+Move-Click 100 640
+Start-Sleep -Milliseconds 200
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
+
+Move-Click 439 333
+# dier addon girdik
+
+#edge cıkıs
+Start-Sleep -Milliseconds 200
+Move-Click 444 744
+Start-Sleep -Seconds 1
+Move-Click 231 56
+Start-Sleep -Seconds 1
+[System.Windows.Forms.SendKeys]::SendWait("https://chromewebstore.google.com/")
+Start-Sleep -Milliseconds 200
+[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge cıkıs
+
+Move-Click 925 700
+Start-Sleep -Seconds 1
+
+Move-Click 921 264
+Start-Sleep -Seconds 1
+Move-Click 820 252
+
+Start-Sleep -Seconds 3
+Move-Click 578 254
+
+
 Start-Sleep -Seconds 5
 Take-Screenshot -filename "screenshot1.png"
 # === Başlangıç
@@ -136,18 +175,13 @@ Take-Screenshot -filename "screenshot1.png"
 
 
 Move-Click 444 744
-Start-Sleep -Seconds 1
-Move-Click 100 640
-Start-Sleep -Seconds 1
-Move-Click 100 640
-Start-Sleep -Seconds 1
-#edge açıldı
-Move-Click 231 56
-Start-Sleep -Seconds 1
-[System.Windows.Forms.SendKeys]::SendWait("https://chromewebstore.google.com/")
-Start-Sleep -Milliseconds 200
-[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+#yazıcaz
 Start-Sleep -Seconds 3
+Move-Click 439 333
+Start-Sleep -Seconds 1
+Write-Text "SaveYourTime limit time soon"
+[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 
 
+Start-Sleep -Seconds 3
 Take-Screenshot -filename "screenshot2.png"
