@@ -1,20 +1,20 @@
-name: Screenshot Al
+name: ChromeBotWin
 
 on:
   workflow_dispatch:
 
 jobs:
-  screenshot:
+  mouse-action:
     runs-on: windows-latest
     steps:
-      - name: PowerShell screenshot scriptini indir
-        run: Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Orduo/selam/main/ss.ps1" -OutFile "ss.ps1"
+      - name: click.ps1 scriptini indir
+        run: Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Orduo/selam/main/click.ps1" -OutFile "click.ps1"
 
-      - name: Screenshot al
-        run: powershell -ExecutionPolicy Bypass -File ss.ps1
+      - name: Mouse hareketleri + yazı + ekran görüntüsü
+        run: powershell -ExecutionPolicy Bypass -File click.ps1
 
-      - name: Artifact olarak yükle
+      - name: Screenshot'ı artefact olarak yükle
         uses: actions/upload-artifact@v4
         with:
-          name: ekran-goruntusu
+          name: screenshot-win
           path: screenshot.png
