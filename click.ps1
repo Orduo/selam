@@ -184,7 +184,8 @@ Start-Sleep -Milliseconds 500
 [System.Windows.Forms.SendKeys]::SendWait("https://chromewebstore.google.com/")
 Start-Sleep -Milliseconds 200
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
-
+Start-Sleep -Milliseconds 200
+Move-Click 187 16
 
 
 Start-Sleep -Seconds 3
