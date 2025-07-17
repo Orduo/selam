@@ -55,7 +55,7 @@ Start-Sleep -Seconds 5
 Move-Click 235 615
 
 Move-Click 541 747
-Start-Sleep -Seconds 3    
+Start-Sleep -Seconds 4
 
 Move-Click 887 661
 Start-Sleep -Seconds 1    
@@ -124,9 +124,8 @@ Take-Screenshot -filename "screenshot1.png"
 
 
 Start-Sleep -Seconds 1
-Move-Click 444 744
-#Start-Sleep -Seconds 2
-#Move-Click 100 600
+Move-Click 100 640
+Start-Sleep -Seconds 1#Move-Click 100 600
 #Start-Sleep -Seconds 3
 #Move-Click 100 610
 Start-Sleep -Seconds 2
