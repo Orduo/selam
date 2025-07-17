@@ -45,17 +45,17 @@ function Take-Screenshot {
 }
 
 # === Mouse hareketleri + click ===
-Move-Click 541 742
-Start-Sleep -Seconds 3
+Move-Click 541 742# chrome
+Start-Sleep -Seconds 2
 
-Move-Click 443 748
+Move-Click 443 748 #edge
 Start-Sleep -Seconds 3
 
 Move-Click 235 619
 Start-Sleep -Seconds 1
 
 Move-Click 543 746 # chrome
-Start-Sleep -Seconds 1
+Start-Sleep -Seconds 2
 
 Move-Click 887 661
 Start-Sleep -Seconds 1
@@ -70,4 +70,5 @@ Take-Screenshot -filename "screenshot1.png"
 
 
 Move-Click 444 744 #edge
+Start-Sleep -Seconds 2
 Take-Screenshot -filename "screenshot2.png"
