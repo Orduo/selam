@@ -69,11 +69,11 @@ Start-Sleep -Seconds 1
 Move-Click 450 471
 Start-Sleep -Seconds 1
 #edge g
-Move-Click 444 744
+#Move-Click 444 744
 Start-Sleep -Seconds 1
-Move-Click 100 595
+#Move-Click 100 595
 Start-Sleep -Seconds 1
-Move-Click 541 742
+#Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
 
@@ -112,8 +112,11 @@ Move-Click 921 264
 Start-Sleep -Seconds 1
 Move-Click 820 252
 
-
 Start-Sleep -Seconds 3
+Move-Click 578 254
+
+
+Start-Sleep -Seconds 5
 Take-Screenshot -filename "screenshot1.png"
 # === Başlangıç
 #Write-Text "SaveYourTime limit time soon"
