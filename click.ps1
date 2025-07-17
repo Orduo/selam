@@ -42,34 +42,15 @@ function Take-Screenshot {
 }
 
 # === Mouse hareketleri + click ===
-Move-Click 700 550
+Move-Click 541 742
 Start-Sleep -Seconds 2
 
-Move-Click 740 850
+Move-Click 443 748
 Start-Sleep -Seconds 1
 
-Move-Click 760 735
-Start-Sleep -Seconds 1
-
-Move-Click 450 550
-Start-Sleep -Seconds 1
-
-Move-Click 650 125
 Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 Start-Sleep -Seconds 1
-
-Move-Click 800 400
-Start-Sleep -Seconds 1
-
-Move-Click 926 1004
-Start-Sleep -Seconds 1
-
-Move-Click 830 300
-Start-Sleep -Seconds 2
-
-Move-Click 650 250
-Start-Sleep -Seconds 2
 
 # === Screenshot al ===
 Take-Screenshot
