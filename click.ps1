@@ -54,14 +54,81 @@ Start-Sleep -Seconds 5
 #tarayıcılar açıldı edge butona bastı
 Move-Click 235 615
 
-Take-Screenshot -filename "screenshot1.png"
-
 Move-Click 541 747
 Start-Sleep -Seconds 3    
 
 Move-Click 887 661
+Start-Sleep -Seconds 1    
 Move-Click 504 677
+Start-Sleep -Seconds 1    
 Move-Click 675 675
 Start-Sleep -Seconds 1
+## açıldı
+Move-Click 450 471
+Start-Sleep -Seconds 1
+
+#edge g
+Move-Click 444 744
+Start-Sleep -Seconds 1
+Move-Click 100 595
+Start-Sleep -Seconds 1
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
+
+Move-Click 608 128
+Start-Sleep -Seconds 1
+Write-Text "SaveYourTime limit time soon"
+[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+Start-Sleep -Seconds 1
+
+#edge g
+Move-Click 444 744
+Start-Sleep -Seconds 1
+Move-Click 100 605
+Start-Sleep -Seconds 1
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
+
+Move-Click 439 333
+#chrome sayfasına girdik indirme kaldı
+
+#edge g
+Start-Sleep -Seconds 1
+Move-Click 444 744
+Start-Sleep -Seconds 2
+Move-Click 100 610
+Start-Sleep -Seconds 1
+Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
+
+Move-Click 925 700
+Start-Sleep -Seconds 1
+
+Move-Click 921 264
+Start-Sleep -Seconds 1
+Move-Click 820 252
+
+Start-Sleep -Seconds 3
+Move-Click 578 254
+
+
+Start-Sleep -Seconds 5
+Take-Screenshot -filename "screenshot1.png"
+# === Başlangıç
+#Write-Text "SaveYourTime limit time soon"
+#[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+
+
+
+Start-Sleep -Seconds 1
+Move-Click 444 744
+#Start-Sleep -Seconds 2
+#Move-Click 100 600
+#Start-Sleep -Seconds 3
+#Move-Click 100 610
+Start-Sleep -Seconds 2
 
 Take-Screenshot -filename "screenshot2.png"
