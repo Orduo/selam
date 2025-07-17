@@ -53,8 +53,6 @@ Start-Sleep -Seconds 5
 
 #tarayıcılar açıldı edge butona bastı
 Move-Click 235 615
-Start-Sleep -Seconds 1
-
 
 Take-Screenshot -filename "screenshot1.png"
 
@@ -62,10 +60,7 @@ Move-Click 541 747
 Start-Sleep -Seconds 3    
 
 Move-Click 887 661
-Start-Sleep -Seconds 1
-
 Move-Click 504 677
-Start-Sleep -Seconds 1
 Move-Click 675 675
 Start-Sleep -Seconds 1
 
