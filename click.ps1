@@ -118,10 +118,10 @@ Move-Click 578 254
 Start-Sleep -Seconds 3
 Move-Click 176 29
 Start-Sleep -Seconds 1
-Move-Click 608 128
+Move-Click 316 131
 Start-Sleep -Seconds 1
 
-Write-Text "SaveYourTime limit time soon"
+Write-Text "QuickPaste Upload files by Paste or Drop – fast and easy."
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 
 Start-Sleep -Seconds 5
@@ -138,6 +138,13 @@ Move-Click 100 640
 Start-Sleep -Seconds 1
 Move-Click 100 640
 Start-Sleep -Seconds 1
+
+#edge açıldı
+Move-Click 257 52
+Start-Sleep -Seconds 1
+Write-Text "https://chromewebstore.google.com/"
+[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+Start-Sleep -Seconds 3
 
 
 Take-Screenshot -filename "screenshot2.png"
