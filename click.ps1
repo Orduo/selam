@@ -124,7 +124,7 @@ Start-Sleep -Seconds 1
 Start-Sleep -Milliseconds 200
 [System.Windows.Forms.SendKeys]::SendWait("{BACKSPACE}")
 
-Write-Text "QuickPaste Upload files by Paste or Drop – fast and easy."
+Write-Text "QuickPaste Upload files by Paste or Drop fast and easy."
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 
 Start-Sleep -Seconds 5
