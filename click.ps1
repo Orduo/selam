@@ -46,7 +46,7 @@ Move-Click 541 742
 Start-Sleep -Seconds 2
 
 Move-Click 443 748
-Start-Sleep -Seconds 1
+Start-Sleep -Seconds 3
 
 Move-Click 235 619
 Start-Sleep -Seconds 1
