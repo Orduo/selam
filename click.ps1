@@ -49,14 +49,16 @@ Move-Click 541 742
 Start-Sleep -Seconds 1
 
 Move-Click 443 748
-Start-Sleep -Seconds 1
+Start-Sleep -Seconds 3
+
+#tarayıcılar açıldı edge butona bastı
 
 Move-Click 235 619
 Start-Sleep -Seconds 1
 
 Move-Click 539 750
 Start-Sleep -Seconds 1
-
+#chrome button bastı
 Move-Click 887 661
 Start-Sleep -Seconds 1
 
