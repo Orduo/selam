@@ -170,12 +170,21 @@ Start-Sleep -Seconds 3
 Take-Screenshot -filename "screenshot1.png"
 
 
-Move-Click 986 32
+Move-Click 443 748
 Start-Sleep -Seconds 1
-Move-Click 439 333
+Move-Click 528 241
 Start-Sleep -Milliseconds 200
 Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+Start-Sleep -Milliseconds 200
+Move-Click 339 21
+Start-Sleep -Milliseconds 500
+Move-Click 231 56
+Start-Sleep -Milliseconds 500
+[System.Windows.Forms.SendKeys]::SendWait("https://chromewebstore.google.com/")
+Start-Sleep -Milliseconds 200
+[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+
 
 
 Start-Sleep -Seconds 3
