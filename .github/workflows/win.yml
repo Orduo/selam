@@ -5,17 +5,17 @@ jobs:
   mouse-action:
     runs-on: windows-latest
     steps:
-      - name: Setup PowerShell Functions and Execute
+      - name: Setup PowerShell Assemblies
         shell: powershell
         run: |
           Add-Type -AssemblyName System.Windows.Forms
           Add-Type -AssemblyName System.Drawing
           
-          function Move-Click {
-              param (
-                  [int]$x,
-                  [int]$y
-              )
+      - name: Define Functions
+        shell: powershell
+        run: |
+          function Global:Move-Click {
+              param ([int]$x, [int]$y)
               [System.Windows.Forms.Cursor]::Position = New-Object System.Drawing.Point($x, $y)
               Add-Type -TypeDefinition @"
                   using System;
@@ -32,17 +32,13 @@ jobs:
               [Mouse]::mouse_event(0x04, 0, 0, 0, 0)
           }
           
-          function Write-Text {
-              param (
-                  [string]$text
-              )
+          function Global:Write-Text {
+              param ([string]$text)
               [System.Windows.Forms.SendKeys]::SendWait($text)
           }
           
-          function Take-Screenshot {
-              param (
-                  [string]$filename
-              )
+          function Global:Take-Screenshot {
+              param ([string]$filename)
               $screenWidth = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Width
               $screenHeight = [System.Windows.Forms.SystemInformation]::PrimaryMonitorSize.Height
               $bitmap = New-Object System.Drawing.Bitmap $screenWidth, $screenHeight
@@ -53,8 +49,9 @@ jobs:
               $bitmap.Dispose()
           }
           
-          Write-Host "Starting mouse automation..."
-          
+      - name: Execute Mouse Actions Part 1
+        shell: powershell
+        run: |
           Move-Click 541 742
           Start-Sleep -Seconds 2
           Move-Click 443 748
@@ -63,13 +60,17 @@ jobs:
           Move-Click 541 747
           Start-Sleep -Seconds 4
           Move-Click 887 661
-          Start-Sleep -Seconds 1    
+          Start-Sleep -Seconds 1
           Move-Click 504 677
-          Start-Sleep -Seconds 1    
+          Start-Sleep -Seconds 1
           Move-Click 675 675
           Start-Sleep -Seconds 1
           Move-Click 450 471
           Start-Sleep -Seconds 1
+          
+      - name: Execute Mouse Actions Part 2
+        shell: powershell
+        run: |
           Move-Click 444 744
           Start-Sleep -Seconds 1
           Move-Click 100 595
@@ -81,6 +82,10 @@ jobs:
           Write-Text "SaveYourTime limit time soon"
           [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
           Start-Sleep -Seconds 1
+          
+      - name: Execute Mouse Actions Part 3
+        shell: powershell
+        run: |
           Move-Click 444 744
           Start-Sleep -Seconds 1
           Move-Click 100 605
@@ -95,6 +100,10 @@ jobs:
           Start-Sleep -Seconds 1
           Move-Click 541 742
           Start-Sleep -Seconds 1
+          
+      - name: Execute Mouse Actions Part 4
+        shell: powershell
+        run: |
           Move-Click 925 700
           Start-Sleep -Seconds 1
           Move-Click 921 264
@@ -107,13 +116,18 @@ jobs:
           Start-Sleep -Seconds 1
           Move-Click 316 131
           Start-Sleep -Seconds 1
+          
+      - name: Execute Text Input and First Screenshot
+        shell: powershell
+        run: |
           Write-Text "QuickPaste Upload files by Paste or Drop – fast and easy."
           [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
           Start-Sleep -Seconds 5
-          
-          Write-Host "Taking first screenshot..."
           Take-Screenshot -filename "screenshot1.png"
           
+      - name: Execute Final Actions and Second Screenshot
+        shell: powershell
+        run: |
           Move-Click 444 744
           Start-Sleep -Seconds 1
           Move-Click 100 640
@@ -125,11 +139,7 @@ jobs:
           Write-Text "https://chromewebstore.google.com/"
           [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
           Start-Sleep -Seconds 3
-          
-          Write-Host "Taking second screenshot..."
           Take-Screenshot -filename "screenshot2.png"
-          
-          Write-Host "Automation completed!"
           
       - name: İlk screenshot'ı artefact olarak yükle
         uses: actions/upload-artifact@v4
