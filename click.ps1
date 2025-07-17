@@ -69,19 +69,23 @@ Start-Sleep -Seconds 1
 # google okey addpn girişi altta
 Move-Click 450 471
 Start-Sleep -Seconds 1
-Move-Click 443 748
-Start-Sleep -Seconds 1
+#edge g
 Move-Click 444 744
 Start-Sleep -Seconds 1
+Move-Click 100 590
+Start-Sleep -Seconds 1
 Move-Click 541 742
+Start-Sleep -Seconds 1
+#edge g
 
-Start-Sleep -Seconds 3
 Move-Click 608 128
 Start-Sleep -Seconds 1
 Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
-Start-Sleep -Seconds 3
+Start-Sleep -Seconds 2
+Move-Click 439 333
 
+Start-Sleep -Seconds 3
 Take-Screenshot -filename "screenshot1.png"
 # === Başlangıç
 #Write-Text "SaveYourTime limit time soon"
@@ -89,7 +93,8 @@ Take-Screenshot -filename "screenshot1.png"
 
 
 
-Move-Click 100 590
+Start-Sleep -Seconds 1
+Move-Click 444 744
 Start-Sleep -Seconds 2
 Move-Click 100 600
 Start-Sleep -Seconds 2
