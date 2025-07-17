@@ -116,10 +116,11 @@ Move-Click 578 254
 
 # indirdi diğeri
 Start-Sleep -Seconds 3
-Move-Click 578 254
+Move-Click 176 29
 Start-Sleep -Seconds 1
 Move-Click 608 128
 Start-Sleep -Seconds 1
+
 Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 
@@ -134,6 +135,9 @@ Take-Screenshot -filename "screenshot1.png"
 Move-Click 444 744
 Start-Sleep -Seconds 1
 Move-Click 100 640
-Start-Sleep -Seconds 2
+Start-Sleep -Seconds 1
+Move-Click 100 640
+Start-Sleep -Seconds 1
+
 
 Take-Screenshot -filename "screenshot2.png"
