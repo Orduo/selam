@@ -86,7 +86,7 @@ Start-Sleep -Milliseconds 200
 Move-Click 444 744
 Start-Sleep -Seconds 1
 Move-Click 100 605
-Start-Sleep -Milliseconds 200
+Start-Sleep -Seconds 1
 Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
@@ -99,7 +99,7 @@ Start-Sleep -Milliseconds 200
 Move-Click 444 744
 Start-Sleep -Seconds 2
 Move-Click 100 610
-Start-Sleep -Milliseconds 200
+Start-Sleep -Seconds 1
 Move-Click 541 742
 Start-Sleep -Seconds 1
 #edge g
@@ -166,19 +166,14 @@ Start-Sleep -Seconds 3
 Move-Click 578 254
 
 
-Start-Sleep -Seconds 5
-Take-Screenshot -filename "screenshot1.png"
-# === Başlangıç
-#Write-Text "SaveYourTime limit time soon"
-#[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
-
-
-
-Move-Click 444 744
-#yazıcaz
 Start-Sleep -Seconds 3
-Move-Click 439 333
+Take-Screenshot -filename "screenshot1.png"
+
+
+Move-Click 986 32
 Start-Sleep -Seconds 1
+Move-Click 439 333
+Start-Sleep -Milliseconds 200
 Write-Text "SaveYourTime limit time soon"
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 
