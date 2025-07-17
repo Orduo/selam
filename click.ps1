@@ -64,6 +64,10 @@ Start-Sleep -Seconds 1
 
 Move-Click 504 677
 Start-Sleep -Seconds 1
+Move-Click 675 675
+
+Start-Sleep -Seconds 1
+Move-Click 353 464
 
 Take-Screenshot -filename "screenshot1.png"
 # === Başlangıç
@@ -72,5 +76,7 @@ Take-Screenshot -filename "screenshot1.png"
 
 
 Move-Click 444 744
-Start-Sleep -Seconds 2
+Start-Sleep -Seconds 1
+Move-Click 100 600
+
 Take-Screenshot -filename "screenshot2.png"
