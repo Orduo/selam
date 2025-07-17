@@ -186,7 +186,20 @@ Start-Sleep -Milliseconds 200
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 Start-Sleep -Milliseconds 200
 Move-Click 187 16
-
+Start-Sleep -Milliseconds 200
+# eklentiye tıkladım
+Move-Click 449 482
+Start-Sleep -Milliseconds 200
+Move-Click 339 21
+Start-Sleep -Milliseconds 200
+Move-Click 528 241
+Start-Sleep -Milliseconds 200
+Write-Text "QuickPaste Upload files by Paste or Drop fast and easy."
+[System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+Start-Sleep -Milliseconds 200
+Move-Click 187 16
+Start-Sleep -Milliseconds 200
+Move-Click 950 718
 
 Start-Sleep -Seconds 3
 Take-Screenshot -filename "screenshot2.png"
