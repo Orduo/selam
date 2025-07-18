@@ -214,7 +214,7 @@ Start-Sleep -Seconds 4
 
 #ss
 Start-Sleep -Milliseconds 200
-Move-Click 187 16
+Move-Click 339 21
 Start-Sleep -Milliseconds 200
 Move-Click 449 482
 Start-Sleep -Seconds 2
