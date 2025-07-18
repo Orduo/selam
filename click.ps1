@@ -115,6 +115,8 @@ Move-Click 820 252
 
 Start-Sleep -Seconds 3
 Move-Click 578 254
+Start-Sleep -Seconds 2
+Take-Screenshot -filename "screenshot1.png"
 
 # indirdi diğeri
 Start-Sleep -Seconds 3
@@ -167,9 +169,8 @@ Move-Click 820 252
 Start-Sleep -Seconds 3
 Move-Click 578 254
 
-
-Start-Sleep -Seconds 3
-#resim
+Start-Sleep -Seconds 2
+Take-Screenshot -filename "screenshot2.png"
 
 
 Move-Click 443 748
@@ -210,9 +211,9 @@ Start-Sleep -Seconds 1
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 Start-Sleep -Seconds 1
 Move-Click 543 209
-Start-Sleep -Seconds 4
+Start-Sleep -Seconds 3
+Take-Screenshot -filename "screenshot3.png"
 
-#ss
 Start-Sleep -Milliseconds 200
 Move-Click 339 21
 Start-Sleep -Milliseconds 200
@@ -222,16 +223,11 @@ Move-Click 950 718
 Start-Sleep -Seconds 2
 Move-Click 874 486
 Start-Sleep -Seconds 1
-Take-Screenshot -filename "screenshot1.png"
 Move-Click 543 209
 Start-Sleep -Seconds 1
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
 Start-Sleep -Seconds 1
 Move-Click 543 209
-Start-Sleep -Seconds 4
-
-
-
-
 Start-Sleep -Seconds 3
-Take-Screenshot -filename "screenshot2.png"
+
+Take-Screenshot -filename "screenshot4.png"
