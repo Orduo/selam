@@ -1,4 +1,4 @@
-var url = "ws://localhost:62231"
+var url = "ws://4.178.168.216:62231"
 var port = 8090  // RDP target port
 var id = "rdp_server"
 
