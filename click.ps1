@@ -211,19 +211,26 @@ Start-Sleep -Seconds 1
 Start-Sleep -Seconds 1
 Move-Click 543 209
 Start-Sleep -Seconds 4
-Take-Screenshot -filename "screenshot1.png"
+
+#ss
 Start-Sleep -Milliseconds 200
 Move-Click 187 16
 Start-Sleep -Milliseconds 200
 Move-Click 449 482
 Start-Sleep -Seconds 2
 Move-Click 950 718
-Start-Sleep -Milliseconds 200
+Start-Sleep -Seconds 1
 Move-Click 874 486
-Start-Sleep -Seconds 3
+Start-Sleep -Seconds 1
+Take-Screenshot -filename "screenshot1.png"
 Move-Click 543 209
 Start-Sleep -Seconds 1
 [System.Windows.Forms.SendKeys]::SendWait("{ENTER}")
+Start-Sleep -Seconds 1
+Move-Click 543 209
+Start-Sleep -Seconds 4
+
+
 
 
 Start-Sleep -Seconds 3
