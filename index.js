@@ -1,6 +1,6 @@
-var url = "ws://4.178.168.216:62231"
-var port = 3389
-var id = "name"
+var url = "ws://localhost:62231"
+var port = 8090  // RDP target port
+var id = "rdp_server"
 
 const socketio = require('socket.io-client')
 const net = require('net');
