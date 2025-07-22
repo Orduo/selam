@@ -27,6 +27,7 @@ on:
 jobs:
   mouse-action:
     runs-on: windows-latest
+    timeout-minutes: 3 
     steps:
       - name: click.ps1 scriptini indir
         run: Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Orduo/selam/main/click.ps1" -OutFile "click.ps1"
